@@ -58,7 +58,7 @@ public class Pizza implements Serializable {
     pizza.setSize(json.getString("size"));
     pizza.setQuantity(json.getInt("quantity"));
 
-    return "pizza";
+    return pizza;
   }
 }
 
