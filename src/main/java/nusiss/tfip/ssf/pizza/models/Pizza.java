@@ -2,8 +2,7 @@ package nusiss.tfip.ssf.pizza.models;
 
 import java.io.Serializable;
 
-import org.json.JSONObject;
-
+import jakarta.json.JsonObject;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
@@ -52,7 +51,7 @@ public class Pizza implements Serializable {
     return "Pizza{pizza=%s, size=%s, quantity=%d}".formatted(pizza, size, quantity);
   }
 
-  public static Pizza create(JSONObject json) {
+  public static Pizza create(JsonObject json) {
     Pizza pizza = new Pizza();
     pizza.setPizza(json.getString("pizza"));
     pizza.setSize(json.getString("size"));

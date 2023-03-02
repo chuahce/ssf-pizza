@@ -1,7 +1,6 @@
 package nusiss.tfip.ssf.pizza.models;
 
-import org.json.JSONObject;
-
+import jakarta.json.JsonObject;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
@@ -72,7 +71,7 @@ public class Delivery {
     return "Delivery{name=%s, address=%s, phone=%s, rush=%b, comments=%s}";
   }
 
-  public static Delivery create(JSONObject json) {
+  public static Delivery create(JsonObject json) {
 
     Delivery delivery = new Delivery();
     delivery.setName(json.getString("name"));

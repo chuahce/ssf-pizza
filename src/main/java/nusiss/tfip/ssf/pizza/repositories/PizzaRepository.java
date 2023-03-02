@@ -19,10 +19,10 @@ public class PizzaRepository {
     redisTemplate.opsForValue().set(order.getOrderId(), order.toJSON().toString());
   }
 
-  public Optional<Order> get(String orderID) {
+  public Optional<Order> get(String orderId) {
     String json = redisTemplate.opsForValue().get(orderId);
 
-    if ((null == json) || (json.trim().length <= 0))
+    if ((null == json) || (json.trim().length() <= 0))
     return Optional.empty();
 
     return Optional.of(Order.create(json));

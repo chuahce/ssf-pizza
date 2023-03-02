@@ -1,5 +1,7 @@
 package nusiss.tfip.ssf.pizza.models;
 
+import java.io.StringReader;
+
 import jakarta.json.Json;
 import jakarta.json.JsonObject;
 import jakarta.json.JsonReader;
@@ -62,7 +64,7 @@ public class Order {
   }
 
   public boolean getRush() {
-    return this.delivery.getRush();
+    return this.delivery.isRush();
   }
 
   public boolean isRush() {
